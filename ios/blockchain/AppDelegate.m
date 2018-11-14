@@ -16,7 +16,11 @@
 {
   NSURL *jsCodeLocation;
 
-    jsCodeLocation = [NSURL URLWithString:@"http://100.84.166.146:8081/index.bundle?platform=ios&dev=true"];
+///在线包
+///    jsCodeLocation = [NSURL URLWithString:@"http://100.84.166.146:8081/index.bundle?platform=ios&dev=true"];
+
+  ///离线包
+  jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"bundle/index.ios" withExtension:@"jsbundle"];
   
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"blockchain"
